@@ -22,6 +22,7 @@ import {StepTwo} from './steps/StepTwo';
 import {StepFour} from './steps/StepFour';
 import {ControlledOnboardingFlow} from './ControlledOnboardingFlow';
 import {printProps} from './hoc/printProps';
+import {withUser} from './hoc/withUser';
 
 const people = [{
     name: 'John Doe',
@@ -79,6 +80,7 @@ const StepThree = ({ goToNext }) => (
 );
 
 const UserInfoWrapped = printProps(UserInfo);
+const UserInfoWithLoader = withUser(UserInfo, '234');
 
 function App() {
     const [shouldShowModal, setShouldShowModal] = useState(false);
@@ -117,6 +119,7 @@ function App() {
             <hr/>
 
             <UserInfoWrapped a={1} b="Hello" c={{name: 'Marcin'}}/>
+            <UserInfoWithLoader/>
             <hr/>
 
             <UncontrolledOnboardingFlow onFinish={data => {
