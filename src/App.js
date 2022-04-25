@@ -25,6 +25,7 @@ import {printProps} from './hoc/printProps';
 import {withUser} from './hoc/withUser';
 import {UserInfoForm} from './hoc/UserInfoForm';
 import {CurrentUserInfo} from './people/CurrentUserInfo';
+import {UserInfoById} from './people/UserInfoById';
 
 const people = [{
     name: 'John Doe',
@@ -121,6 +122,7 @@ function App() {
             <hr/>
 
             <CurrentUserInfo/>
+            <UserInfoById userId="234"/>
             <UserInfoForm/>
             <UserInfoWrapped a={1} b="Hello" c={{name: 'Marcin'}}/>
             <UserInfoWithLoader/>
