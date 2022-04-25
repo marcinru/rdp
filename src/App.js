@@ -23,6 +23,7 @@ import {StepFour} from './steps/StepFour';
 import {ControlledOnboardingFlow} from './ControlledOnboardingFlow';
 import {printProps} from './hoc/printProps';
 import {withUser} from './hoc/withUser';
+import {UserInfoForm} from './hoc/UserInfoForm';
 
 const people = [{
     name: 'John Doe',
@@ -118,6 +119,7 @@ function App() {
             </ControlledOnboardingFlow>
             <hr/>
 
+            <UserInfoForm/>
             <UserInfoWrapped a={1} b="Hello" c={{name: 'Marcin'}}/>
             <UserInfoWithLoader/>
             <hr/>
