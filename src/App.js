@@ -29,6 +29,7 @@ import {UserInfoById} from './people/UserInfoById';
 import {ProductInfoById} from './products/ProductInfoById';
 import {RecursiveComponent} from './functional/RecursiveComponent';
 import {BigSuccessButton, DangerButton} from './functional/composition';
+import {DangerBtn, SuccessBtn} from './functional/partiallyApply';
 
 const people = [{
     name: 'John Doe',
@@ -129,6 +130,8 @@ function App() {
 
             <BigSuccessButton text="Big success!"/>
             <DangerButton text="Danger!"/>
+            <DangerBtn text="Warning!"/>
+            <SuccessBtn text="Success"/>
             <RecursiveComponent data={nestedObject}/>
 
             <UncontrolledModal>
