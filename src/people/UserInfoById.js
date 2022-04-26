@@ -1,7 +1,22 @@
-import {useResource} from '../hooks/useResource';
+import {useDataSource} from '../hooks/useDataSource';
+import axios from 'axios';
+
+const serverResource = (resourceUrl) => {
+    return async () => {
+        const response = await axios.get(resourceUrl);
+        return response.data;
+    }
+}
+
+const localStorageResource = key => async () => {
+    return localStorage.getItem(key);
+}
 
 export const UserInfoById = ({ userId }) => {
-    const user = useResource(`/users/${userId}`);
+    const message = useDataSource(localStorageResource('message'));
+    console.log('message', message);
+
+    const user = useDataSource(serverResource(`/users/${userId}`));
     const { name, age, hairColor, hobbies } = user || {};
 
     return user ? (

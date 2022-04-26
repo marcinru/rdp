@@ -126,7 +126,9 @@ function App() {
             <hr/>
             <ProductInfoById productId="1234"/>
             <hr/>
+            <h2>get UserInfoById</h2>
             <UserInfoById userId="234"/>
+            <hr/>
             <UserInfoForm/>
             <UserInfoWrapped a={1} b="Hello" c={{name: 'Marcin'}}/>
             <UserInfoWithLoader/>
