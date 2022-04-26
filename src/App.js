@@ -27,6 +27,7 @@ import {UserInfoForm} from './hoc/UserInfoForm';
 import {CurrentUserInfo} from './people/CurrentUserInfo';
 import {UserInfoById} from './people/UserInfoById';
 import {ProductInfoById} from './products/ProductInfoById';
+import {RecursiveComponent} from './functional/RecursiveComponent';
 
 const people = [{
     name: 'John Doe',
@@ -61,6 +62,28 @@ const products = [{
     description: 'State-of-the-art technology for optimum running',
     rating: 4.2
 }];
+
+const nestedObject = {
+    a: 1,
+    b: {
+        b1: 4,
+        b2: {
+            b23: 'Hello',
+        },
+        b3: {
+            b31: {
+                message: 'Hi',
+            },
+            b32: {
+                message: 'Hi',
+            }
+        }
+    },
+    c: {
+        c1: 2,
+        c2: 3,
+    }
+}
 
 const userIds = ['123', '234', '345'];
 
@@ -102,6 +125,8 @@ function App() {
                 <LeftHandComponent name="Marcin"/>
                 <RightHandComponent message="Welcome"/>
             </SplitScreen>
+
+            <RecursiveComponent data={nestedObject}/>
 
             <UncontrolledModal>
                 <ProductInfo product={products[0]}/>
