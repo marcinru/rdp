@@ -28,6 +28,7 @@ import {CurrentUserInfo} from './people/CurrentUserInfo';
 import {UserInfoById} from './people/UserInfoById';
 import {ProductInfoById} from './products/ProductInfoById';
 import {RecursiveComponent} from './functional/RecursiveComponent';
+import {BigSuccessButton, DangerButton} from './functional/composition';
 
 const people = [{
     name: 'John Doe',
@@ -126,6 +127,8 @@ function App() {
                 <RightHandComponent message="Welcome"/>
             </SplitScreen>
 
+            <BigSuccessButton text="Big success!"/>
+            <DangerButton text="Danger!"/>
             <RecursiveComponent data={nestedObject}/>
 
             <UncontrolledModal>
